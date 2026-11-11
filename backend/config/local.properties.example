@@ -1,0 +1,7 @@
+# Copy this file to config/local.properties and fill in your Postgres login.
+# config/local.properties is gitignored. Do not put real passwords in this example.
+spring.datasource.username=postgres
+spring.datasource.password=replace-with-your-password
+
+# At least 32 characters. Used to sign login tokens.
+jwt.secret=replace-with-a-random-string-at-least-32-characters
