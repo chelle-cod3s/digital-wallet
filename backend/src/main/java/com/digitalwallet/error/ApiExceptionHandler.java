@@ -35,6 +35,11 @@ public class ApiExceptionHandler {
         return ResponseEntity.badRequest().body(Map.of("error", "Request body is not valid JSON"));
     }
 
+    @ExceptionHandler(ApiException.class)
+    public ResponseEntity<Map<String, String>> api(ApiException ex) {
+        return ResponseEntity.status(ex.getStatus()).body(Map.of("error", ex.getMessage()));
+    }
+
     @ExceptionHandler(EmailAlreadyRegisteredException.class)
     public ResponseEntity<Map<String, String>> emailTaken(EmailAlreadyRegisteredException ex) {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(Map.of("error", ex.getMessage()));

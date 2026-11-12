@@ -111,6 +111,10 @@ public class Transaction {
         return createdAt;
     }
 
+    public void setCreatedAt(Instant createdAt) {
+        this.createdAt = createdAt;
+    }
+
     public boolean isFlagged() {
         return flagged;
     }
